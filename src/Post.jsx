@@ -1,6 +1,9 @@
-export function Post(){
+export function Post({author, content}){
     return(
-        <h1>Teste sport recife</h1>
+        <>
+            <h1>{author}</h1>
+            <p>{content}</p>
+        </>
     )
 }
 

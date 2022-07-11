@@ -1,10 +1,17 @@
 import { Post } from "./Post"
 
 function App() {
+ 
   return (
     <>
-      <h1>Gabriel Barreto</h1>
-      <Post />
+      <Post 
+        author="James" 
+        content="lorem"
+      />
+      <Post 
+        author="Robert" 
+        content="testasd asd as"
+      />
     </>
   )
 }
