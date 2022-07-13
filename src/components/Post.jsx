@@ -7,7 +7,7 @@ export function Post(){
                 <div className={styles.author}>
                     <img className={styles.avatar} src="https://github.com/gabrieldevloper.png" />
                     <div className={styles.authorInfo}>
-                        <strong>Gabriel Barret</strong>
+                        <strong>Gabriel Barreto</strong>
                         <span>Backend Developer</span>
                     </div>
                 </div>
@@ -19,9 +19,13 @@ export function Post(){
         
                 <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>  
 
-                <p>👉 jane.design/doctorcare</p>   
+                <p>{' '}<a href="#">👉 jane.design/doctorcare</a> </p>   
 
-                <p><a href="">#novoprojeto #nlw #rocketseat</a></p> 
+                <p>
+                    <a href="#">#novoprojeto</a>{' '}
+                    <a href="#">#nlw</a>{' '}
+                    <a href="#">#rocketseat</a>
+                </p> 
             </div>
         </article>
     )
