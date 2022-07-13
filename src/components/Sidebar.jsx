@@ -11,7 +11,7 @@ export function Sidebar(){
                 <img className={styles.avatar} src="https://github.com/gabrieldevloper.png" />
 
                 <strong>Gabriel Barreto</strong>
-                <span>Backend Developer</span>
+                <span>Fullstack Developer</span>
             </div>
 
             <footer>
