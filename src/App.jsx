@@ -23,8 +23,8 @@ const posts = [
   {
     id: 2,
     author:{
-      avatarUrl: "https://github.com/maikbrito.png",
-      name: "Mayk Brito",
+      avatarUrl: "https://github.com/diego3g.png",
+      name: "Diego",
       role: "Fullstack Developer"
     },
     publishedAt: new Date('2022-07-13 20:39:15'),
