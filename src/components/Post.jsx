@@ -10,7 +10,6 @@ export function Post({author, content, publishedAt}){
     const [comments, setComments] = useState([
         'Post muito bacana hein?!'
     ]);
-    
     const [newComment, setNewComment] = useState('');
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'ás' HH:mm'h'", {
@@ -41,6 +40,17 @@ export function Post({author, content, publishedAt}){
            alert("Erro ao deletar comentário");
         }
     }
+
+    function handleNewCommentChange(){
+        event.target.setCustomValidity("");
+        setNewComment(event.target.value);
+    }
+
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity("Este campo é obrigatório")
+    }
+
+    const isNewCommentEmpty = newComment.length === 0;
 
     return(
         <article className={styles.post}>
@@ -75,12 +85,13 @@ export function Post({author, content, publishedAt}){
                 <textarea
                     required
                     placeholder="Deixe um comentário"
+                    onInvalid={handleNewCommentInvalid}
                     value={newComment}
-                    onChange={e => setNewComment(e.target.value)}
+                    onChange={handleNewCommentChange}
                 />
 
                 <footer>
-                    <button type="submit">Publicar</button>
+                    <button type="submit" disabled={isNewCommentEmpty}>Publicar</button>
                 </footer>
     
             </form>
