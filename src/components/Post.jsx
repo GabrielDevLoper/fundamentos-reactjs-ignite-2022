@@ -29,7 +29,13 @@ export function Post({author, content, publishedAt}){
     }
 
     function deleteComment(comment){
-        console.log(`deletar comentario ${comment}`);
+       const commentsAlreadyExists = [...comments];
+
+       const commentIsDeleteIndex = commentsAlreadyExists.indexOf(comment);
+       
+       commentsAlreadyExists.splice(commentIsDeleteIndex, 1);
+
+       setComments(commentsAlreadyExists);
     }
 
     return(
