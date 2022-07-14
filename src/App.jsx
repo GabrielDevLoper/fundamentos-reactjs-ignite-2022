@@ -39,12 +39,10 @@ const posts = [
 function App() {
   return (
     <>
-      <Header />
-      
+      <Header /> 
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-
           {
             posts.map(post => (
               <Post 
@@ -55,9 +53,6 @@ function App() {
               />
             ))
           }
-         
-          
-
         </main>
       </div>
     </>
