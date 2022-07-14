@@ -28,14 +28,18 @@ export function Post({author, content, publishedAt}){
         setNewComment('');
     }
 
-    function deleteComment(comment){
-       const commentsAlreadyExists = [...comments];
+    function deleteComment(commentToDelete){
+        try {
+            const commentsAlreadyExists = comments.filter(comment => {
+                return comment !== commentToDelete;
+            });
 
-       const commentIsDeleteIndex = commentsAlreadyExists.indexOf(comment);
-       
-       commentsAlreadyExists.splice(commentIsDeleteIndex, 1);
+            setComments(commentsAlreadyExists);
 
-       setComments(commentsAlreadyExists);
+            alert("Comentário excluído com sucesso!");
+        } catch (error) {
+           alert("Erro ao deletar comentário");
+        }
     }
 
     return(
@@ -68,7 +72,8 @@ export function Post({author, content, publishedAt}){
             <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
 
-                <textarea 
+                <textarea
+                    required
                     placeholder="Deixe um comentário"
                     value={newComment}
                     onChange={e => setNewComment(e.target.value)}
